@@ -1,7 +1,7 @@
 const fs = require("fs");
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const port= process.env.port || 3000; // should have or otherwise the process.env.port is undefined - why?
 const app = express();
 
 const upload_folder = "tmp";
@@ -39,5 +39,5 @@ app.post("/upload", (req, res) => {
 });
 
 // Server listener
-app.listen(process.env.PORT);
-console.log("Your app is listening on port " + process.env.PORT);
+app.listen(port);
+console.log("Your app is listening on port " + port);
